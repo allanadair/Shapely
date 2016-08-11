@@ -1,22 +1,13 @@
-platform:
-  - x86
-  - x64
-
-configuration:
-  - Release
-
 matrix:
   fast_finish: true
 
 install:
-  # Download and install 7zip for extracting GEOS source.
-  - ps: (new-object net.webclient).DownloadFile('http://www.7-zip.org/a/7z1602-x64.msi', '7z1602-x64.msi')
-  - ps: msiexec /i 7z1602-x64.msi /quiet /qn /norestart
-
   # Download, extract, and build GEOS.
   - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'c:/projects/shapely/geos-3.5.0.tar.bz2')
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar.bz2
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar
   - cmd: cd c:/projects/shapely/geos-3.5.0
   - cmd: autogen.bat
+  - cmd: cd c:/
+  - cmd: dir nmake.exe nmake.bat setenv.exe setenv.bat /b/s
   - cmd: nmake /f c:/projects/shapely/geos-3.5.0/makefile.vc MSVC_VER=1500

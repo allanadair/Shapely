@@ -16,5 +16,5 @@ install:
   # Download and extract GEOS.
   - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'c:/projects/shapely/geos-3.5.0.tar.bz2')
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar.bz2
-  - cmd: ls c:/projects/shapely
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar
+  - cmd: ls c:/projects/shapely/geos-3.5.0

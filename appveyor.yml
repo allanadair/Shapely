@@ -14,12 +14,12 @@ install:
   - cmd: 'set PATH=%PATH%;"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0"'
   - cmd: 'set PATH=%PATH%;"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin"'
 
-  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1500_32
+  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1500_32/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86
   - cmd: nmake makefile.vc MSVC_VER=1500
 
-  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1500_64
+  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1500_64/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86_amd64
   - cmd: nmake makefile.vc MSVC_VER=1500
@@ -28,12 +28,12 @@ install:
   - cmd: 'set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0"'
   - cmd: 'set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"'
 
-  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_32
+  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86
   - cmd: nmake makefile.vc MSVC_VER=1900
 
-  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_64
+  - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86_amd64
   - cmd: nmake makefile.vc MSVC_VER=1900

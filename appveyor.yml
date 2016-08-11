@@ -14,6 +14,6 @@ install:
   - ps: msiexec /i 7z1602-x64.msi /quiet /qn /norestart /log install.log
 
   # Download and extract GEOS.
-  - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'geos-3.5.0.tar.bz2')
-  - cmd: 7z x geos-3.5.0.tar.bz2
-  - cmd: 7z x geos-3.5.0.tar
+  - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'c:/geos-3.5.0.tar.bz2')
+  - cmd: 7z x c:/geos-3.5.0.tar.bz2
+  - cmd: 7z x c:/geos-3.5.0.tar

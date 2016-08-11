@@ -24,8 +24,7 @@ install:
   - cmd: vcvarsall x86_amd64
   - cmd: nmake makefile.vc MSVC_VER=1500
 
-  - cmd: 'set PATH=;'
-  - cmd: 'set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0"'
+  - cmd: 'set PATH="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
   - cmd: 'set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"'
 
   - cmd: cd c:/projects/shapely/geos-3.4.2_msvc1900_32/geos-3.4.2

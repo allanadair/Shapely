@@ -8,4 +8,6 @@ install:
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar
   - cmd: cd c:/projects/shapely/geos-3.5.0
   - cmd: autogen.bat
+  - cmd: cd C:/
+  - cmd: dir SetEnv.* /b/s
   - cmd: '"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin\nmake.exe" /x86 /f c:/projects/shapely/geos-3.5.0/makefile.vc MSVC_VER=1500'

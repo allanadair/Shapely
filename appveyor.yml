@@ -8,7 +8,7 @@ install:
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar
   - cmd: cd c:/projects/shapely/geos-3.5.0
   - cmd: autogen.bat
-  - cmd: '$env:Path += ";C:/Users/appveyor/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0;C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin"'
+  - cmd: 'set PATH=%PATH%;"C:/Users/appveyor/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0";"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin"'
   # - cmd: cd C:/Users/appveyor/AppData/Local/Programs/Common/Microsoft/Visual C++ for Python/9.0
   - cmd: vcvarsall x86_amd64
   # - cmd: cd c:/projects/shapely/geos-3.5.0

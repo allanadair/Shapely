@@ -11,6 +11,7 @@ install:
   - cmd: 7z x c:/projects/shapely/geos-3.4.2.tar -oc:/projects/shapely/geos-3.4.2_msvc1900_32
   - cmd: 7z x c:/projects/shapely/geos-3.4.2.tar -oc:/projects/shapely/geos-3.4.2_msvc1900_64
 
+  - cmd: set ORIGPATH=%PATH%
   - cmd: 'set PATH=%PATH%;"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0"'
   - cmd: 'set PATH=%PATH%;"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0\VC\bin"'
 
@@ -24,7 +25,7 @@ install:
   - cmd: vcvarsall x86_amd64
   - cmd: nmake makefile.vc MSVC_VER=1500
 
-  - cmd: 'set PATH="C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
+  - cmd: 'set PATH=%ORIGPATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC"'
   - cmd: 'set PATH=%PATH%;"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin"'
 
   - cmd: cd c:/projects/shapely/geos-3.4.2_msvc1900_32/geos-3.4.2

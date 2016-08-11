@@ -17,6 +17,5 @@ install:
   - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'c:/projects/shapely/geos-3.5.0.tar.bz2')
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar.bz2
   - cmd: 7z x c:/projects/shapely/geos-3.5.0.tar
-  - cmd: ls c:/projects/shapely
-  - cmd: c:/projects/shapely/geos-3.5.0/autogen.bat
+  - cmd: cmd.exe /c 'c:/projects/shapely/geos-3.5.0/autogen.bat'
   - cmd: nmake /f c:/projects/shapely/geos-3.5.0/makefile.vc MSVC_VER=1500

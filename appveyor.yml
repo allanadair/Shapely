@@ -27,8 +27,8 @@ install:
 
   - cmd: 'set PATH=%ORIGPATH%;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC'
   - cmd: 'set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin'
-  - cmd: setx GEOS_MSVC 10.0
-  - cmd: setx GEOS_MSC 1600
+  - cmd: setx -m GEOS_MSVC 10.0
+  - cmd: setx -m GEOS_MSC 1600
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_32/geos-3.5.0
   - cmd: autogen.bat

@@ -29,6 +29,6 @@ install:
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
   - cmd: cd C:/projects/shapely
-  - cmd: mkdir C:/projects/shapely/shapely/DLLs
+  - cmd: 'mkdir shapely\DLLs'
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/*.dll C:/projects/shapely/shapely/DLLs
   - cmd: C:/Python35-x64/python.exe setup.py build

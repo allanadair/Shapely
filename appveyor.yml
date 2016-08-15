@@ -29,13 +29,15 @@ install:
   - cmd: 'set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin'
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_32/geos-3.5.0
-  - cmd: 'echo "GEOS_MSVC = 10.0" > custom.opt'
-  - cmd: 'echo "GEOS_MSC = 1600" > custom.opt'
   - cmd: autogen.bat
+  - cmd: 'echo "GEOS_MSVC = 10.0" >> nmake.opt'
+  - cmd: 'echo "GEOS_MSC = 1600" >> nmake.opt'
   - cmd: vcvarsall x86
-  - cmd: nmake /f makefile.vc EXT_NMAKE_OPT=custom.opt
+  - cmd: nmake /f makefile.vc
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_64/geos-3.5.0
   - cmd: autogen.bat
+  - cmd: 'echo "GEOS_MSVC = 10.0" >> nmake.opt'
+  - cmd: 'echo "GEOS_MSC = 1600" >> nmake.opt'
   - cmd: vcvarsall x86_amd64
-  - cmd: nmake /f makefile.vc EXT_NMAKE_OPT=custom.opt
+  - cmd: nmake /f makefile.vc

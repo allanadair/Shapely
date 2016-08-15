@@ -27,14 +27,13 @@ install:
 
   - cmd: 'set PATH=%ORIGPATH%;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC'
   - cmd: 'set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin'
-  - cmd: set GEOS_MSVC=10.0
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_32/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86
-  - cmd: nmake /f makefile.vc
+  - cmd: nmake /f makefile.vc GEOS_MSVC=10.0 GEOS_MSC=1600
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_64/geos-3.5.0
   - cmd: autogen.bat
   - cmd: vcvarsall x86_amd64
-  - cmd: nmake /f makefile.vc
+  - cmd: nmake /f makefile.vc GEOS_MSVC=10.0 GEOS_MSC=1600

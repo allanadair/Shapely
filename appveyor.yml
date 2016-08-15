@@ -30,14 +30,12 @@ install:
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_32/geos-3.5.0
   - cmd: autogen.bat
-  - cmd: 'echo "GEOS_MSVC = 10.0" >> nmake.opt'
-  - cmd: 'echo "GEOS_MSC = 1600" >> nmake.opt'
   - cmd: vcvarsall x86
-  - cmd: nmake /f makefile.vc
+  - cmd: cd src
+  - cmd: nmake GEOS_MSVC=10.0 GEOS_MSC=1600
 
   - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1600_64/geos-3.5.0
   - cmd: autogen.bat
-  - cmd: 'echo "GEOS_MSVC = 10.0" >> nmake.opt'
-  - cmd: 'echo "GEOS_MSC = 1600" >> nmake.opt'
   - cmd: vcvarsall x86_amd64
-  - cmd: nmake /f makefile.vc
+  - cmd: cd src
+  - cmd: nmake GEOS_MSVC=10.0 GEOS_MSC=1600

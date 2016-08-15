@@ -15,6 +15,7 @@ install:
 
   - cmd: 'set PATH=%ORIGPATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC'
   - cmd: 'set PATH=%ORIGPATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin'
+  - cmd: cd c:/
   - cmd: dir vcvarsall.bat /b/s
 
   # - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0

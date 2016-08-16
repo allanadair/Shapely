@@ -31,7 +31,7 @@ install:
   - cmd: cd src
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
-  - cmd: 'set PATH=%PATH%;%PYTHON%;%PYTHON\Scripts%'
+  - cmd: 'set PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts'
   - cmd: cd C:/projects/shapely/shapely/speedups
   - "cython _speedups.pyx"
   - cmd: 'mkdir shapely\DLLs'

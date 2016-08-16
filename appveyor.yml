@@ -33,7 +33,7 @@ install:
 
   - cmd: 'set PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts'
   - cmd: cd C:/projects/shapely
-  - "cython shapely/speedups/_speedups.pyx -o shapely/speedups/_speedups.c"
+  - "cython -w C:\projects\shapely\shapely\speedups -o _speedups.c _speedups.pyx"
   - cmd: 'mkdir shapely\DLLs'
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos.dll C:/projects/shapely/DLLs
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos_c.dll C:/projects/shapely/DLLs

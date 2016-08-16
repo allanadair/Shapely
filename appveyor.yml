@@ -1,6 +1,6 @@
 environment:
   matrix:
-    - PYTHON: "C:\\Python35-x64"
+    - PYTHON: "C:\\Python35"
 
 install:
   - "%PYTHON%\\python.exe -m pip install wheel"
@@ -26,15 +26,15 @@ install:
   # - cmd: cd src
   # - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
-  - cmd: cd C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0
-  - cmd: SetEnv.cmd /x64 /Release
+  - cmd: cd C:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0
+  - cmd: SetEnv.cmd /x32 /Release
   - cmd: autogen.bat
   - cmd: cd src
-  - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900 WIN64=YES
+  - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900 WIN64=NO
 
   - cmd: cd C:/projects/shapely
   - cmd: 'cython -w C:\projects\shapely\shapely\speedups -o _speedups.c _speedups.pyx'
-  - cmd: 'set GEOS_LIBRARY_PATH=C:\projects\shapely\geos-3.5.0_msvc1900_64\geos-3.5.0\src\geos_c.dll'
-  - cmd: C:/Python35-x64/python.exe setup.py build_ext -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -LC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src
+  - cmd: 'set GEOS_LIBRARY_PATH=C:\projects\shapely\geos-3.5.0_msvc1900_32\geos-3.5.0\src\geos_c.dll'
+  - cmd: C:/Python35/python.exe setup.py build_ext -IC:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0/include -LC:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0/src
   - cmd: tree build /F
   # - cmd: C:/Python35-x64/python.exe setup.py build

@@ -27,7 +27,7 @@ install:
   # - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
   - cmd: cd C:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0
-  - cmd: SetEnv.cmd /x32 /Release
+  - cmd: SetEnv.cmd /x86 /Release
   - cmd: autogen.bat
   - cmd: cd src
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900 WIN64=NO

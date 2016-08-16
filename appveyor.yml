@@ -38,7 +38,7 @@ install:
   - cmd: 'mkdir shapely\build\lib\shapely\DLLs'
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos.dll C:/projects/shapely/shapely/build/lib/shapely/DLLs
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos_c.dll C:/projects/shapely/shapely/build/lib/shapely/DLLs
-  - cmd: 'set GEOS_LIBRARY_PATH=C:/projects/shapely/build/lib/shapely/DLLs'
+  - cmd: 'set GEOS_LIBRARY_PATH=C:/projects/shapely/build/lib/shapely/DLLs/geos_c.dll'
   - cmd: C:/Python35-x64/python.exe setup.py build
   - cmd: tree build /F
   # - cmd: C:/Python35-x64/python.exe setup.py build

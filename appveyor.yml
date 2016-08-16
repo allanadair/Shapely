@@ -32,10 +32,9 @@ install:
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
   - cmd: 'set PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts'
-  - cmd: cd C:/projects/shapely/shapely/speedups
-  - "cython _speedups.pyx"
-  - cmd: 'mkdir shapely\DLLs'
   - cmd: cd C:/projects/shapely
+  - "cython shapely/speedups/_speedups.pyx -o shapely/speedups/_speedups.c"
+  - cmd: 'mkdir shapely\DLLs'
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos.dll C:/projects/shapely/DLLs
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos_c.dll C:/projects/shapely/DLLs
   - cmd: 'mkdir shapely\build\lib\shapely\DLLs'

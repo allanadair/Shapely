@@ -45,5 +45,7 @@ install:
   - cmd: C:/Python35-x64/python.exe setup.py bdist_wheel
   - cmd: C:/Python35-x64/python.exe -m venv env
   - cmd: 'C:\projects\shapely\env\Scripts\activate.bat'
-  - cmd: dir *.whl /b/s
-  - cmd: pip install *.whl
+  - cmd: pip install C:\projects\shapely\dist\Shapely-1.6.dev0-cp35-cp35m-win_amd64.whl
+  - cmd: pip install -r requirements-dev.txt
+  - cmd: py.test tests
+

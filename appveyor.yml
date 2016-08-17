@@ -43,6 +43,6 @@ install:
   - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos_c.dll C:/projects/shapely/build/lib.win-amd64-3.5/DLLs/
 
   - cmd: C:/Python35-x64/python.exe setup.py bdist_wheel
-  - cmd: pyvenv env
+  - cmd: C:/Python35-x64/python.exe -m venv env
   - cmd: 'env\bin\activate.bat'
-  - cmd: C:/Python35-x64/python.exe -m pip install *.whl
+  - cmd: pip install *.whl

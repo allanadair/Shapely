@@ -33,7 +33,7 @@ install:
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900 BUILD_BATCH=YES WIN64=YES
 
   - cmd: cd C:/projects/shapely
-  - cmd: 'cython -v -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -w C:\projects\shapely\shapely\speedups -o _speedups.c --capi-reexport-cincludes _speedups.pyx'
+  - cmd: 'cython -v -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -w C:\projects\shapely\shapely\speedups -o _speedups.c -X FORCE=UNRESOLVED _speedups.pyx'
   - cmd: 'set GEOS_LIBRARY_PATH=C:\projects\shapely\geos-3.5.0_msvc1900_64\geos-3.5.0\src\geos_c.dll'
   - cmd: C:/Python35-x64/python.exe setup.py build_ext -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -LC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src
   - cmd: tree build /F

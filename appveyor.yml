@@ -47,6 +47,5 @@ install:
   - cmd: 'C:\projects\shapely\env\Scripts\activate.bat'
   - cmd: pip install C:\projects\shapely\dist\Shapely-1.6.dev0-cp35-cp35m-win_amd64.whl
   - cmd: pip install -r requirements-dev.txt
-  - cmd: cd ..
   - cmd: py.test shapely/tests
 

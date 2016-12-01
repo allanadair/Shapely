@@ -4,6 +4,7 @@ environment:
 
 install:
   - "%PYTHON%\\python.exe -m pip install wheel"
+  - "%PYTHON%\\python.exe -m pip install cython"
 
   # Download, extract, and build GEOS.
   - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.6.0.tar.bz2', 'C:/projects/shapely/geos-3.6.0.tar.bz2')

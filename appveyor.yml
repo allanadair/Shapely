@@ -4,13 +4,12 @@ environment:
 
 install:
   - "%PYTHON%\\python.exe -m pip install wheel"
-  - "%PYTHON%\\python.exe -m pip install cython"
 
   # Download, extract, and build GEOS.
-  - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.5.0.tar.bz2', 'C:/projects/shapely/geos-3.5.0.tar.bz2')
-  - cmd: 7z x C:/projects/shapely/geos-3.5.0.tar.bz2
-  - cmd: 7z x C:/projects/shapely/geos-3.5.0.tar -oc:/projects/shapely/geos-3.5.0_msvc1900_32
-  - cmd: 7z x C:/projects/shapely/geos-3.5.0.tar -oc:/projects/shapely/geos-3.5.0_msvc1900_64
+  - ps: (new-object net.webclient).DownloadFile('http://download.osgeo.org/geos/geos-3.6.0.tar.bz2', 'C:/projects/shapely/geos-3.6.0.tar.bz2')
+  - cmd: 7z x C:/projects/shapely/geos-3.6.0.tar.bz2
+  - cmd: 7z x C:/projects/shapely/geos-3.6.0.tar -oc:/projects/shapely/geos-3.6.0_msvc1900_32
+  - cmd: 7z x C:/projects/shapely/geos-3.6.0.tar -oc:/projects/shapely/geos-3.6.0_msvc1900_64
 
   - cmd: set ORIGPATH=%PATH%
   # - cmd: 'set PATH=%PATH%;"C:\Users\appveyor\AppData\Local\Programs\Common\Microsoft\Visual C++ for Python\9.0"'
@@ -20,33 +19,33 @@ install:
   # - cmd: 'set PATH=%PATH%;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin\amd64'
   - cmd: 'set PATH=%PATH%;%PYTHON%;%PYTHON%\Scripts;C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin'
 
-  # - cmd: cd c:/projects/shapely/geos-3.5.0_msvc1900_32/geos-3.5.0
+  # - cmd: cd c:/projects/shapely/geos-3.6.0_msvc1900_32/geos-3.6.0
   # - cmd: autogen.bat
   # - cmd: vcvarsall x86
   # - cmd: cd src
   # - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900
 
-  - cmd: cd C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0
+  - cmd: cd C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0
   - cmd: SetEnv.cmd /x64 /Release
   - cmd: autogen.bat
   - cmd: cd src
   - cmd: nmake -f makefile.vc GEOS_MSVC=14.0 GEOS_MSC=1900 BUILD_BATCH=YES WIN64=YES
 
   - cmd: cd C:/projects/shapely
-  - cmd: set LINK=/FORCE:UNRESOLVED
-  - cmd: 'cython -v -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -w C:\projects\shapely\shapely\speedups -o _speedups.c _speedups.pyx'
-  - cmd: 'set GEOS_LIBRARY_PATH=C:\projects\shapely\geos-3.5.0_msvc1900_64\geos-3.5.0\src\geos_c.dll'
-  - cmd: C:/Python35-x64/python.exe setup.py build_ext -IC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/capi;C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/include -LC:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src
+# - cmd: set LINK=/FORCE:UNRESOLVED
+  - cmd: 'cython -v -IC:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/src;C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/capi;C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/include -w C:\projects\shapely\shapely\speedups -o _speedups.c _speedups.pyx'
+  - cmd: 'set GEOS_LIBRARY_PATH=C:\projects\shapely\geos-3.6.0_msvc1900_64\geos-3.6.0\src\geos_c.dll'
+  - cmd: C:/Python35-x64/python.exe setup.py build_ext -IC:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/src;C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/capi;C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/include -LC:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/src
   - cmd: C:/Python35-x64/python.exe setup.py build
   - cmd: 'mkdir C:\projects\shapely\build\lib.win-amd64-3.5\shapely\DLLs'
-  - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos.dll C:/projects/shapely/build/lib.win-amd64-3.5/shapely/DLLs/
-  - cmd: cp C:/projects/shapely/geos-3.5.0_msvc1900_64/geos-3.5.0/src/geos_c.dll C:/projects/shapely/build/lib.win-amd64-3.5/shapely/DLLs/
+  - cmd: cp C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/src/geos.dll C:/projects/shapely/build/lib.win-amd64-3.5/shapely/DLLs/
+  - cmd: cp C:/projects/shapely/geos-3.6.0_msvc1900_64/geos-3.6.0/src/geos_c.dll C:/projects/shapely/build/lib.win-amd64-3.5/shapely/DLLs/
 
   - cmd: C:/Python35-x64/python.exe setup.py bdist_wheel
   - cmd: C:/Python35-x64/python.exe -m venv env
   - cmd: 'C:\projects\shapely\env\Scripts\activate.bat'
-  - cmd: pip install -e .
   - cmd: pip install -r requirements-dev.txt
+  - cmd: pip install -e .
   - cmd: pip install C:\projects\shapely\dist\Shapely-1.6.dev0-cp35-cp35m-win_amd64.whl
   - cmd: py.test tests
 
